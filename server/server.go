@@ -33,7 +33,7 @@ func handleClient(conn net.Conn) {
 	defer conn.Close()
 	addr := conn.RemoteAddr().String()
 
-    	fmt.Printf("[CONECTOU] %s\n", addr)
+	fmt.Printf("[CONECTOU] %s\n", addr)
 
 	reader := bufio.NewReader(conn)
 

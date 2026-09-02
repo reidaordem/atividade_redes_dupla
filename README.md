@@ -1,2 +1,4 @@
 ACEITA MULTIPLAS CONEXÕES
 TRATAMENTO DE ERROS PEDIDOS
+
+Dupla: Emanuel Alves Melo - 2410546 , João Vitor de Sousa Silva - 2410508

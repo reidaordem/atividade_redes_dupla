@@ -15,6 +15,9 @@ func main() {
 	}
 	defer conn.Close()
 
+	addr := conn.RemoteAddr().String()
+	fmt.Printf("Conectado ao servidor %s\n", addr)
+	
 	reader := bufio.NewReader(os.Stdin)
 	serverReader := bufio.NewReader(conn)
 	for {
