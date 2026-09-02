@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	conn, err := net.Dial("tcp", "localhost:9000")
+	conn, err := net.Dial("tcp", "127.0.0.1:9000")
 	if err != nil {
 		fmt.Println("Erro ao conectar ao servidor:", err)
 		os.Exit(1)
@@ -18,6 +18,7 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 	serverReader := bufio.NewReader(conn)
 	for {
+		fmt.Print("calc> ")
 		text, _ := reader.ReadString('\n')
 
 		_, err := conn.Write([]byte(text))
@@ -32,7 +33,7 @@ func main() {
 			break
 		}
 		fmt.Print(response)
-		if response == "(conexão encerrada)" {
+		if response == "(conexão encerrada)\n" {
 			break
 		}
 	}

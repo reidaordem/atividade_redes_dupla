@@ -31,7 +31,9 @@ func main() {
 
 func handleClient(conn net.Conn) {
 	defer conn.Close()
-	fmt.Printf("Cliente conectado de: %s\n", conn.RemoteAddr().String())
+	addr := conn.RemoteAddr().String()
+
+    	fmt.Printf("[CONECTOU] %s\n", addr)
 
 	reader := bufio.NewReader(conn)
 
@@ -52,6 +54,7 @@ func handleClient(conn net.Conn) {
 		operacao := operacoes(message, conn)
 
 		if operacao {
+			fmt.Printf("[ENCERROU] %s\n", addr)
 			break
 		}
 	}
